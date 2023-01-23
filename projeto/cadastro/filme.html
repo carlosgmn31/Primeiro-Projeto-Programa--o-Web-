@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro de Filmes</title>
+    <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../estilização.css">
+    <style>
+        #divResultado{
+            color: #ffffff;
+            text-transform: uppercase;
+            background-color: #8C1B24;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+</head>
+<body>
+    <a href="../homepage.html" id="logo"><h1 >GABFLIX</h1></a>
+    <a href="cadastros.html"><h1>&larr;</a><a> &nbsp;&nbsp;</a><a href="../login.html"><img src="../imagens/on-power-symbol.png" width="32px"></a></h1>
+    <h1>Cadastre um Filme</h1>
+    
+    <fieldset>
+        
+            <form action="../cadastro/cadastros.html">
+                <form action="../cadastro/cadastros.html"> </form>
+                <div id="divResultado"></div>
+                <h6>CAMPOS COM * SÃO OBRIGATÓRIOS</h6>
+                <p><h4>Título*&emsp;<input style="background-color: #070D09 ; color: #ffffff;"type="text" id="filmecadastro" placeholder="digite o título"></h4>
+                </p>
+                <p>
+                <h4>Gênero*</h4>    
+                <select style="background-color: #070D09 ; color: #ffffff;" name="generocadastrofilmes"id="idgenero">
+                    <option value=""></option>
+                    <option value="terror">Terror</option>
+                    <option value="comedia">Comédia</option>
+                    <option value="acao">Ação</option>
+                    <option value="aventura">Aventura</option>
+                    <option value="animes">Animes</option>
+                    </select>
+                    <h4>Premiações*</br></h4> </p>
+                    <p>
+                    <input type="checkbox" name="checkboxOscar" id="premioglobo" value="Globo"/>Globo de Ouro
+                    <input type="checkbox"name="checkboxOscar" id="premiogrammy" value="Grammy"/>Grammy
+                    <input type="checkbox" id="premiomtv" name="checkboxOscar"value="MTV"/>MTV Movie Awards
+                    <input type="checkbox" id="premiooscar" name="checkboxOscar"value="Óscar"/>Óscar
+                    <input type="checkbox" id="premiobrasil" value="Brasileiro"name="checkboxOscar"/>Grande Prêmio do Cinema Brasileiro
+                </p>
+                <p><h4>Descrição*</br></h4>
+                <textarea id='iddescricao' style="background-color: #070D09 ; color: #ffffff;" id="Descriçãofilme" rows="10" cols="45" placeholder="digite aqui uma sinopse..."></textarea></p>
+                                    &emsp;&emsp;<button   style="background-color: #8C1B24 ; color: #ffffff;" type="submit" onclick="validarDados();">CADASTRAR</button>&emsp;
+                <button type="reset" style="background-color: #8C1B24 ; color: #ffffff;">LIMPAR</button>
+                </p>
+            </form>
+        </fieldset>
+        <script>
+            function validarDados(){
+            //alert("Olá");
+            var divResultado = document.getElementById("divResultado");
+            //Campo Texto
+            var titulo = document.getElementById("filmecadastro");
+            if (titulo.value == ""){
+                //alert("Informe o título.");
+                divResultado.innerHTML = "Informe o título!";
+                titulo.focus(); 
+                return false;
+            }
+            //Combo Genero
+            var genero = document.getElementById("idgenero");
+            if (genero.value == ""){
+                divResultado.innerHTML = "Informe o gênero!";
+                genero.focus(); 
+                return false;
+            } 
+             //CheckBox
+             var checkboxs = document.getElementsByName("checkboxOscar");
+            var checkboxSelecionado = false;
+            for (var i = 0; i < checkboxs.length;i++){
+                if (checkboxs[i].checked){
+                    checkboxSelecionado = true;
+                }
+                 
+            }
+            if (!checkboxSelecionado){
+                divResultado.innerHTML = "Informe um prêmio.";
+                return false;
+            }
+            //TextArea
+            var textArea = document.getElementById("iddescricao");
+            if (textArea.value == ""){
+                //alert("Informe o título.");
+                divResultado.innerHTML = "Informe a descrição!";
+                textArea.focus(); 
+                return false;
+            }
+           divResultado.innerHTML = "";
+           alert("Cadastro bem sucedido!")
+           window.location.href = "cadastros.html"
+           }
+
+    </script>
+</body>
+</html>

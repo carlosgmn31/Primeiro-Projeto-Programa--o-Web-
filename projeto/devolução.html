@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DEVOLUÇÃO</title>
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="estilização.css">
+    <style>
+        #divResultado{
+            color: #ffffff;
+            text-transform: uppercase;
+            background-color: #8C1B24;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <a href="homepage.html" id="logo"><h1>GABFLIX</h1></a>
+    <a href="homepage.html"><h1>&larr;</a><a> &nbsp;&nbsp;</a><a href="login.html"><img src="imagens/on-power-symbol.png" width="32px"></a></h1>
+        <fieldset>  <legend>Devolução</legend>
+            <form action="">
+                <form action=""></form>
+                
+                <div id="divResultado"></div>
+                <h6>CAMPOS COM * SÃO OBRIGATÓRIOS</h6>
+        <h4>Cliente*</h4>  
+        <select name="cliente"id="idcliente" style="background-color: #070D09 ; color: #ffffff;" >
+            <option value=""></option>
+            <option value="cliente1">Carlos Gabriel</option>
+            <option value="cliente2">cliente 2</option>
+            <option value="cliente3">cliente 3</option>
+            <option value="cliente4">cliente 4</option>
+            <option value="cliente5">cliente 5</option></select>
+        <p>
+
+        <label>Data de entrega* <input style="background-color: #070D09 ; color: #ffffff;"  type="date" id="idData"></label></p>   
+    </p>
+    <input type="radio" id="DentroDoPrazo" name="prazo" value="">
+    <label for="DentroDoPrazo">dentro do prazo</label>
+    <input type="radio" id="Atrasado" name="prazo" value="">
+    <label for="Atrasado">atrasado</label><br>
+
+    <p><h4>Observacões</br></h4>
+    <textarea id="observacoesloc" rows="10" cols="45" style="background-color: #070D09 ; color: #ffffff;"  placeholder="digite aqui obervações..."></textarea></p>
+                        &emsp;&emsp;<button   style="background-color: #8C1B24 ; color: #ffffff;" type="submit" onclick="validarDados();">CADASTRAR</button>&emsp;
+                        <button type="reset" style="background-color: #8C1B24 ; color: #ffffff;">LIMPAR</button>
+                    </form>
+    </p>
+    </fieldset>
+    <script>
+        function validarDados(){
+        var divResultado = document.getElementById("divResultado");
+        var cliente = document.getElementById("idcliente");
+        if (cliente.value == ""){
+            divResultado.innerHTML = "Informe o cliente!";
+            cliente.focus(); 
+            return false;
+            } 
+        var dt = document.getElementById("idData");
+        if (dt.value == ""){
+            divResultado.innerHTML = "Informe a data de entrega!";
+            dt.focus(); 
+            return false;
+            } 
+        if (document.getElementById("DentroDoPrazo").checked == false
+        &&
+        document.getElementById("Atrasado").checked == false)
+        {divResultado.innerHTML = "Informe se a entrega está no prazo!";
+         return false;
+    }
+    
+       divResultado.innerHTML = "";
+       alert("Devolução registrada!")
+       window.location.href = "homepage.html"
+       }
+       
+
+</script>
+</body>
+</html>

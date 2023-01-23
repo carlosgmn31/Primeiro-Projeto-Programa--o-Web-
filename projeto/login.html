@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TELA DE LOGIN</title>
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="estilização.css">
+    <style>
+        #divResultado{
+            color: #ffffff;
+            text-transform: uppercase;
+            background-color: #8C1B24;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body style="text-align: center;">
+    <a id="logocentro"><h1>GABFLIX</h1></a>
+        <p>
+        <form action="">
+        <form action=""></form>
+        <div id="divResultado"></div><p>Usuário:
+        <input  type="text" id="login"  placeholder="digite o nome de usuárío... "><br><br>&nbsp; 
+        Senha: </b><input type="password" id="password" placeholder="digite a senha..."></p> 
+        <a href="newuser.html" style="text-decoration-line: none">SOU NOVO</a>&emsp; 
+        <a href="recuperar.html" style="text-decoration-line: none">ESQUECI A SENHA</a>
+        <p>
+        <button class="myButton" onclick="validarDados();"type="submit">ENTRAR</button> 
+    </p>
+    </form>
+    <script>
+        function validarDados(){
+        var divResultado = document.getElementById("divResultado");
+        var login = document.getElementById("login");
+        if (login.value == ""){
+            divResultado.innerHTML = "Informe o usuárío!";
+            login.focus(); 
+            return false;
+        }
+        var senha = document.getElementById("password");
+        if (senha.value == ""){
+            divResultado.innerHTML = "Informe a senha!";
+            senha.focus(); 
+            return false;
+        } 
+        
+       divResultado.innerHTML = "";
+       alert("logado com sucesso")
+       window.location.href = "homepage.html"
+       }
+
+</script>
+</body>
+</html>

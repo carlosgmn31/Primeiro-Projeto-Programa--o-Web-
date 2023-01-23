@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilização.css">
+    <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon">
+    <title>locação</title>
+    <style>
+        #divResultado{
+            color: #ffffff;
+            text-transform: uppercase;
+            background-color: #8C1B24;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <a href="../homepage.html" id="logo"><h1 >GABFLIX</h1></a>
+    <a href="acervo.html"><h1>&larr;</a><a> &nbsp;&nbsp;</a><a href="../login.html"><img src="../imagens/on-power-symbol.png" width="32px"></a></h1><h1>Locação</h1>
+    <fieldset>  
+        <form action="../homepage.html">
+            <form action="../homepage.html"></form>
+            <div id="divResultado"></div>
+    
+        <h6>CAMPOS COM * SÃO OBRIGATÓRIOS</h6>
+    <h4>Cliente*</h4>  
+    <select name="cliente" id="idcliente" style="background-color: #070D09 ; color: #ffffff;">
+        <option value=""></option>
+        <option value="cliente1">Carlos Gabriel</option>
+        <option value="cliente2">cliente 2</option>
+        <option value="cliente3">cliente 3</option>
+        <option value="cliente4">cliente 4</option>
+        <option value="cliente5">cliente 5</option></select>
+    <p>
+    <label>Data de locação* <input type="date" style="background-color: #070D09 ; color: #ffffff;" id="dtLoca"></label></p>    
+    <label>Data de entrega* <input type="date" style="background-color: #070D09 ; color: #ffffff;"id="dtEntr"></label></p>   
+</p>
+<p><h4>Observacões</br></h4>
+<textarea id="observacoesloc" rows="10" cols="45" style="background-color: #070D09 ; color: #ffffff;"placeholder="digite aqui obervações..."></textarea></p>
+                    &emsp;&emsp;<button style="background-color: #8C1B24 ; color: #ffffff;" type="submit" onclick="validarDados();">CONFIRMAR</button>&emsp;
+                    <button type="reset"  style="background-color: #8C1B24 ; color: #ffffff;">LIMPAR</button>
+</p>
+</fieldset>
+</body>
+<script>
+    function validarDados(){
+    var divResultado = document.getElementById("divResultado");
+    var cliente = document.getElementById("idcliente");
+    if (cliente.value == ""){
+        divResultado.innerHTML = "Informe o cliente!";
+        cliente.focus(); 
+        return false;
+        } 
+    var dtLoca = document.getElementById("dtLoca");
+    if (dtLoca.value == ""){
+        divResultado.innerHTML = "Informe a data de locação!";
+        dtLoca.focus(); 
+        return false;
+        } 
+    var dtEntr = document.getElementById("dtEntr");    
+    if (dtEntr.value == ""){
+        divResultado.innerHTML = "Informe a data de entrega!";
+        dtEntr.focus(); 
+        return false;
+        } 
+
+   divResultado.innerHTML = "";
+   alert("Locação registrada!")
+   window.location.href = "../homepage.html"
+   }
+   
+
+</script>
+</html>

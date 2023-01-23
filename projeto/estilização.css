@@ -1,0 +1,105 @@
+#logo
+    {
+    font-family: fontelogo;
+    text-decoration-line: none;
+    text-align:center;
+    color: #F2293A;
+    background-color: #070D09;
+    margin-left: 4em;
+    opacity: 0.75;}
+    #logo:hover {
+        color: #400F13;}
+#logodetalhes
+{
+    font-family: fontelogo;
+    text-decoration-line: none;
+    text-align:center;
+    color: #000000;
+    background-color: #070D09;
+    margin-left: 4em;
+    opacity: 0.75;}
+    #logodetalhes:hover {
+        color: #400F13;}
+#logocentro
+{
+    font-family: fontelogo;
+    text-decoration: none;
+    text-align:center;
+    color: #F2293A;
+    margin-left: 4em;}
+
+body {text-align:left;
+    font-family: 'Montserrat', sans-serif;
+    color: #F2293A;
+    background-color: #070D09;
+    margin-left: 4em;}
+
+a   {text-align:left;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration-line: none;
+    color: #ffffff;
+    opacity: 0.75;}
+    a:hover {
+        opacity: 1.0;}
+@font-face {
+    font-family: fontelogo ;
+    src: url(FONTES/LOGO/Saira-VariableFont_wdth\,wght.ttf);
+}
+@font-face {
+    font-family: fontepontual ;
+    src: url(FONTES/DEMAIS/Roboto-Light.ttf);
+}
+
+#detalhes {text-align:left;
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
+    background-color: #ffffff;
+    margin-left: 4em;
+    }
+img {   opacity: 0.5;
+      }
+      img:hover {
+        opacity: 1.0;}
+
+.myButton {
+    background-color:#f2293a;
+    border-radius:10px;
+    border:1px solid #070d09;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family: fontepontual;
+    letter-spacing: 2px;
+    font-size:25px;
+    padding:1px 10px;
+    text-decoration:none;
+    text-shadow:2px 2px 2px #070d09;
+}
+.myButton:hover {
+    background-color:#400F13;
+}
+.myButton:active {
+    position:relative;
+    top:1px;
+}
+.label-diferenciado{
+    position: relative;
+  padding-top: 13px;
+}
+#promotion {
+    font-family: fontepontual;
+    color: #ffffff;
+    border: 5px outset #400F13;
+    padding: 5px;
+  background-color: #F2293A;    
+  text-align: center;
+  width: auto;
+  position: fixed;
+  top:4em;
+  bottom:auto;
+  right:0px;
+  left:auto;
+ }
+#promotion:hover{background-color:#400F13;
+}
+

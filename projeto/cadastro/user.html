@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro de usuario</title>
+    <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../estilização.css">
+    <style>
+        #divResultado2{
+            color: #ffffff;
+            text-transform: uppercase;
+            background-color: #8C1B24;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+</head>
+<body>
+    <a href="../homepage.html" id="logo"><h1 >GABFLIX</h1></a>
+    <a href="cadastros.html"><h1>&larr;</a><a> &nbsp;&nbsp;</a><a href="../login.html"><img src="../imagens/on-power-symbol.png" width="32px"></a></h1>
+    <h1>Dados para Cadastro</h1>
+    <fieldset>
+    <form action="../cadastro/cadastros.html">
+        <form action="../cadastro/cadastros.html"> </form>
+        <h6>CAMPOS COM * SÃO OBRIGATÓRIOS</h6>
+        <div id="divResultado2"></div>
+        <p><h4>Nome:*&emsp;<input type="text" id="usernamecadastro2" style="background-color: #070D09 ; color: #ffffff;" placeholder="digite seu nome completo..."></h4>
+        </p>
+        <p>
+        <h4>Gênero*</h4>    
+        <input type="radio" name="genero" id="mascID2" value="Masculino">
+        <label for="mascID">Masculino</label>
+        <input type="radio" name="genero" id="femID2" value="Feminino">
+        <label for="femID">Feminino</label>
+        <input type="radio" name="genero" id="outrosID2" value="Outros">
+        <label for="outrosID">Outro(s)</label></p>
+        <p>
+            <h4>Categorias Favoritas*</br></h4> </p>
+            <p>
+            <input type="checkbox" id="chkTerror2" name="categoriasCheck" value="terror"/>Terror
+            <input type="checkbox" id="chkComedia2" name="categoriasCheck"value="comedia"/>Comédia
+            <input type="checkbox" id="chkAcao2"name="categoriasCheck" value="acao"/>Ação
+            <input type="checkbox" id="chkAventura2" name="categoriasCheck"value="aventura"/>Aventura
+            <input type="checkbox" id="chkAnime2"name="categoriasCheck" value="anime"/>Animes
+        </p>
+        <p><h4>Observações</br></h4>
+        <textarea id="observacoes" rows="10" cols="45" style="background-color: #070D09 ; color: #ffffff;" placeholder="digite aqui dados adionais que deseja adicionar..."></textarea></p>
+        <p><h4>E-mail:*&emsp;<input type="text" style="background-color: #070D09 ; color: #ffffff;" id="emailcadastro" placeholder="digite o seu melhor e-mail..."></h4></br>
+            &emsp;&emsp;<button  type="submit"onclick="validarDados2();"  style="background-color: #8C1B24 ; color: #ffffff;">CADASTRAR</button>&emsp;
+        <button type="reset" style="background-color: #8C1B24 ; color: #ffffff;">LIMPAR</button>
+        </p>
+    </form>
+</fieldset>
+<script>
+    function validarDados2(){
+    //alert("Olá");
+    var divResultado2 = document.getElementById("divResultado2");
+    //Campo Texto
+    var nome = document.getElementById("usernamecadastro2");
+    if (nome.value == ""){
+        //alert("Informe o título.");
+        divResultado2.innerHTML = "Informe o seu nome!";
+        nome.focus(); 
+        return false;
+    }
+    
+    //Radio genero
+    if (document.getElementById("mascID2").checked == false
+        &&
+        document.getElementById("femID2").checked == false
+        &&
+        document.getElementById("outrosID2").checked == false){
+            divResultado2.innerHTML = "Informe o seu gênero!";
+            return false;
+    }
+     //CheckBox
+     var checkboxs = document.getElementsByName("categoriasCheck");
+    var checkboxSelecionado = false;
+    for (var i = 0; i < checkboxs.length;i++){
+        if (checkboxs[i].checked){
+            checkboxSelecionado = true;
+        }
+         
+    }
+    if (!checkboxSelecionado){
+        divResultado2.innerHTML = "Informe uma categoria!";
+        return false;
+    }
+    //email
+    var email = document.getElementById("emailcadastro");
+    if (email.value == ""){
+        //alert("Informe o título.");
+        divResultado2.innerHTML = "Informe o seu e-mail!";
+        email.focus(); 
+        return false;
+    }
+    
+   divResultado2.innerHTML = "";
+   alert("Cadastro bem sucedido!")
+   window.location.href = "cadastros.html"
+           }
+
+</script>    
+</body>
+</html>
